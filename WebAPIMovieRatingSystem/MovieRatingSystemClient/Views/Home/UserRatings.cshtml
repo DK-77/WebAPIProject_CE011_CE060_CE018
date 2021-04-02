@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MovieRatingSystemClient.ViewModels.UserRating>
+
+@{ ViewData["Title"] = "Ratings"; }
+
+<h1>Ratings</h1>
+
+<p>
+    <a asp-action="CreateRating">Rate New Movie</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.rating)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+<tr>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.genre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.rating)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "EditRating", new { id = item.ratingId, name = item.name, genre = item.genre }) |
+
+        @Html.ActionLink("Delete", "DeleteRating", new { id = item.ratingId, name = item.name, genre = item.genre })
+    </td>
+</tr>}
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Movies">Back to List</a>
+</div>
+
+<script> var errmsg = "@ViewBag.err" </script>
+<script src="~/js/alert.js"></script>

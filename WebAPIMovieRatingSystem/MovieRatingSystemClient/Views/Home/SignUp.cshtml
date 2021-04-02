@@ -1,0 +1,113 @@
+﻿@model MovieRatingSystemClient.Models.User
+@{
+    Layout = "";
+    ViewData["Title"] = "SignUp";
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="~/Signup/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/Signup/css/style.css">
+    <style>
+        body {
+            border: 1px solid transparent;
+            background: -webkit-linear-gradient(to right,#cccccc, #ff7a5c);
+            background: -moz-linear-gradient(to right, #cccccc, #ff7a5c);
+            background: -o-linear-gradient(to right,#cccccc, #ff7a5c);
+            background: linear-gradient(to right, #cccccc, #ff7a5c);
+        }
+
+        .signup-content::before {
+            background-color: rgba(255,255,255,0.8);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="reg">
+
+        <section class="signup">
+            <!-- <img src="images/signup-bg.jpg" alt=""> -->
+            <div class="container">
+                <div class="signup-content">
+                    <form asp-action="SignUp" id="signup-form" class="signup-form">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <h2 class="form-title">Register</h2>
+                        <div style="background-color: rgb(255,255,255);opacity:0.95;border-radius:10px;padding:15px;">
+                            <!--<div class="form-group">
+                                <input asp-for="Username" type="text" class="form-input" name="username" id="name" placeholder="User Name" />
+                                <span asp-validation-for="Username" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="First_Name" type="text" class="form-input" name="first_name" id="first_name" placeholder="First Name" />
+                                <span asp-validation-for="First_Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Last_Name" type="text" class="form-input" name="last_name" id="last name" placeholder="Last Name" />
+                                <span asp-validation-for="Last_Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Address" type="text" class="form-input" name="address" id="address" placeholder="Address" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Number" class="form-input" name="number" id="number" placeholder="Contact Number" />
+                                <span asp-validation-for="Number" class="text-danger"></span>
+                            </div>-->
+                            <div class="form-group">
+                                <input asp-for="Email" type="email" class="form-input" name="email" id="email" placeholder="Your Email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input asp-for="Password" type="text" class="form-input" name="password" id="password" placeholder="Password" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                                <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                            </div>
+                        </div>
+                        <!--<div class="form-group">
+                            <label asp-for="Gender" class="form-input" style="color: #999;">Gender</label><br>
+                            <select asp-for="Gender" class="form-input" style="margin-top: 10px;" name="gender" id="gender" asp-items="Html.GetEnumSelectList<gender>()">
+                                <option value="">select option</option>
+                            </select>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Marital_Status" class="form-input" style="color: #999;">Marital Status</label><br>
+                            <select asp-for="Marital_Status" class="form-input" style="margin-top: 10px;" name="Marital_Status" id="maritalstatus" asp-items="Html.GetEnumSelectList<m_status>()">
+                                <option value="">select option</option>
+                            </select>
+                            <span asp-validation-for="Marital_Status" class="text-danger"></span>
+                        </div>-->
+                        <div class="form-group" style="margin-top: 50px;margin-bottom:0px;">
+                            <input type="submit" name="submit" id="submit" class="form-submit" value="Register" />
+                        </div>
+                    </form>
+                    <p class="loginhere">
+                        Have already an account ? <a href="/Home/Login" class="loginhere-link">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="~/Signup/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Signup/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+
+
+<script> var errmsg = "@ViewBag.err" </script>
+<script src="~/js/alert.js"></script>
+
+
